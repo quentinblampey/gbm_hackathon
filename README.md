@@ -42,7 +42,7 @@ Note that this also makes your environment visible in Jupyter.
 # Starter Notebooks
 To help you start working quickly on the data, we provided you with the following starter Notebooks.
 - `notebooks/data_loader_demo.ipynb` Will help you understand the data loading and which data sources (modalities) are available.
-- `notebooks/visium_starter.ipynb` Will help you load and explore the Visium data. This includes performing data normalization, unsupervised clustering, and quantifying cell population and transcription factor activities.
+- `notebooks/visium_starter_mosaic.ipynb` Will help you load and explore the Visium data. This includes performing data normalization, unsupervised clustering, and quantifying cell population and transcription factor activities.
 
 We hope these Notebooks will help you with your data analyses!
 
