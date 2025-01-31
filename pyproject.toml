@@ -1,0 +1,175 @@
+[build-system]
+requires = ["poetry_core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "owkin-gbmhackathon"
+version = "0.0.0"
+description = "Data loading API and data visualization of GBM MOSAIC data"
+authors = [
+    "Lucas Fidon <lucas.fidon@owkin.com>",
+    "Christian Esposito <christian.esposito@owkin.com>",
+    "Valerie Ducret <valerie.ducret@owkin.com>",
+]
+
+readme = "README.md"
+homepage = "https://github.com/owkin/gbm-mosaic"
+repository = "https://github.com/owkin/gbm-mosaic"
+documentation = "https://owkin.github.io/gbm-mosaic"
+packages = [{ include = "gbmhackathon" }]
+
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Natural Language :: English",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+pandas = ">=2.0.1"
+loguru = "*"
+numpy = "1.25.2"
+pathlib = "*"
+openpyxl = "*"
+attrs = "*"
+pyreadr = "^0.5.0"
+wget = "^3.2"
+lxml = {extras = ["html-clean"], version = "^5.3.0"}
+plotly = "^5.0"
+openslide-python = "*"  # for reading slide images
+omnipath = "1.0.8"
+anndata = "<=0.10.8"
+scanpy = "^1.10.4"
+liana = "^1.5.0"
+decoupler = "^1.8.0"
+igraph = "^0.11.8"
+louvain = "^0.8.2"
+gget = "^0.29.0"
+tiffslide = "^2.4.0"
+tifffile = "^2025.1.10"
+ipytree = "*"
+
+[tool.poetry.group.dev]
+optional = true
+[tool.poetry.group.dev.dependencies]
+ipykernel = ">=6.4"
+ipython = "*"
+jupyter = "*"
+jupytext = "*"
+nbconvert = "*"
+notebook = "*"
+seaborn = "*"
+scipy = "^1.5.4"
+matplotlib = "*"
+lifelines = "*"
+statsmodels = "*"
+
+[tool.poetry.group.docs]
+optional = true
+[tool.poetry.group.docs.dependencies]
+sphinx = "^7.0.0"
+sphinx-gallery = "*"
+Jinja2 = "*"
+doc8 = "*"
+recommonmark = "*"
+m2r = "*"
+mistune = "*"
+nbsphinx = "*"
+pandoc = "*"
+docutils = "*"
+pydocstyle = "*"
+sphinxcontrib-fulltoc = "*"
+sphinxcontrib-mockautodoc = "*"
+sphinx-autodoc-typehints = "*"
+sphinx-paramlinks = "*"
+pydata_sphinx_theme = "*"
+sphinxcontrib-mermaid = "*"
+watchdog = "^2.1.8"
+sphinx-tabs = "^3.4.1"
+
+[tool.poetry.group.linting]
+optional = true
+[tool.poetry.group.linting.dependencies]
+mypy = ">=1.4"
+pre-commit = ">=2.20.0"
+ruff = ">=0.1.2"
+pandas-stubs = "*"
+types-docutils = "*"
+types-python-dateutil = "*"
+types-setuptools = "*"
+types-Jinja2 = "*"
+types-MarkupSafe = "*"
+types-PyYAML = "*"
+typing_extensions = "*"
+
+[tool.poetry.group.testing]
+optional = true
+[tool.poetry.group.testing.dependencies]
+pytest = "*"
+coverage = "*"
+pytest-cov = "*"
+pytest-sphinx = "*"
+pytest-runner = "*"
+pytest-profiling = "*"
+
+[tool.ruff]
+exclude = [
+  ".git",
+  ".github",
+  ".dvc",
+  "__pycache__",
+  ".venv",
+  ".mypy_cache",
+   ".ruff_cache",
+  ".pytest_cache",
+  "conf.py",
+]
+lint.ignore = [
+  "B008",  # do not perform function calls in argument defaults
+  "C901",  # too complex
+  "D105",  # undocumented magic method
+  "E501",  # line too long, handled by black
+  "E731",  # lambda-assignment
+  "PLR0904", # too many public methods
+  "PLR0913", # too many arguments
+  "PLR2004", # magic value comparison
+  "B019", # use of cache methods
+  "B009", # getattr with constant value
+  "N812", # lowercase imported as non constant
+  "PLW2901", # loop variable overwritten by assignment
+  "PT011", # broad pytest errors
+]
+lint.select = [
+  "D",   # pydocstyle
+  "E",   # pycodestyle errors
+  "W",   # pycodestyle warnings
+  "F",   # pyflakes
+  "I",   # isort
+  "N",   # pep8-naming conventions
+  "C",   # flake8-comprehensions
+  "B",   # flake8-bugbear
+  "PL",  # pylint
+  "PT",  # flake8-pytest-style
+  "C90", # mccabe included in flake8
+  "ASYNC", # flake8-async
+]
+line-length = 88  # Must be consistent with black parameter
+target-version = "py39"  # Must be aligned with the Python lower bound
+
+[tool.ruff.lint.isort]
+known-first-party = ["gbmhackathon"]
+lines-after-imports = 2
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
