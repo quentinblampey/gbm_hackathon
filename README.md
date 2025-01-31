@@ -26,7 +26,11 @@ conda create -n gbmhackathon -y python=3.10
 conda activate gbmhackathon
 ```
 
-4. Clone the repository and install the dependencies.
+4. Optional, fork the repository
+If you aim to share your code with your team members, consider doing
+a fork or create a copy of the actual repository with a new name.
+
+5. Clone the repository and install the dependencies.
 ```bash
 cd /home/ec2-user/SageMaker
 git clone https://github.com/owkin/gbm_hackathon.git
