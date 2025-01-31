@@ -26,10 +26,10 @@ conda create -n gbmhackathon -y python=3.10
 conda activate gbmhackathon
 ```
 
-4. Install the dependencies.
+4. Clone the repository and install the dependencies.
 ```bash
 cd /home/ec2-user/SageMaker
-git clone git@github.com:owkin/gbm_hackathon.git
+git clone https://github.com/owkin/gbm_hackathon.git
 cd gbm_hackathon
 make install-poetry
 make install-all
