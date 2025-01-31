@@ -22,15 +22,15 @@ conda config --append envs_dirs /home/ec2-user/SageMaker/.conda/envs
 
 3. Create the environment.
 ```bash
-conda create -n gbmosaic -y python=3.10
-conda activate gbmosaic
+conda create -n gbmhackathon -y python=3.10
+conda activate gbmhackathon
 ```
 
 4. Install the dependencies.
 ```bash
 cd /home/ec2-user/SageMaker
-git clone git@github.com:owkin/gbm_mosaic.git
-cd gbm_mosaic
+git clone git@github.com:owkin/gbm_hackathon.git
+cd gbm_hackathon
 make install-poetry
 make install-all
 pre-commit install
